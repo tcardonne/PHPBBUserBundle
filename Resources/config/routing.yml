@@ -1,0 +1,3 @@
+smurfy_phpbb_user_homepage:
+    pattern:  /test
+    defaults: { _controller: SmurfyPHPBBUserBundle:Default:index }

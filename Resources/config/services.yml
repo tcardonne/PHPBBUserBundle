@@ -1,0 +1,9 @@
+parameters:
+    phpbb_root_path: "/var/www/erezya/forum/"
+
+services:
+    kernel.listener.autologin:
+        class: Smurfy\PHPBBUserBundle\Listener\AutologinListener
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
+        arguments: [@doctrine, @session, @security.context, %phpbb_root_path%]
